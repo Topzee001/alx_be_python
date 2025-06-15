@@ -1,14 +1,13 @@
-import calculator
+from arithmetic_operations import perform_operation
 
-# Exercise 1 on modules, package and lib section
-add = calculator.add(5,3)
-subtract = calculator.subtract(5,3)
-divide = calculator.divide(5,3)
-multiply = calculator.multiply(5,3)
+def main():
+    print("Arithmetic Operations")
+    num1 = float(input("Enter the first number: "))
+    num2 = float(input("Enter the second number: "))
+    operation = input("Enter the operation (add, subtract, multiply, divide): ").strip().lower()
 
-print("multiplication result:", multiply)
-print("addition result:", add)
-print("subtraction result:", subtract)
-print("division result:", divide)
+    result = perform_operation(num1, num2, operation)
+    print(f"Result: {result}")
 
-# Exercise 2
+if __name__ == "__main__":
+    main()
