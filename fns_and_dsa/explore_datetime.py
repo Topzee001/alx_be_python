@@ -8,6 +8,7 @@ def display_current_datetime():
     # Format: "YYYY-MM-DD HH:MM:SS" for 12hrs use %I, for am/pm use %p for CST timezone, %Z, UTC offset %z
     formatted_date = current_date.strftime('%Y-%m-%d %H:%M:%S')
     print(formatted_date)
+    return formatted_date
       
 display_current_datetime()
 
