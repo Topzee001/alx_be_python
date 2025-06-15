@@ -12,13 +12,15 @@ if response.status_code == 200:
     data = response.json()
     temperature = data['main']['temp']  # Temperature in Kelvin
     weather_desc = data['weather'][0]['description']  # Weather description
+    name = data["name"]
     
-    print(response)
+    # print(response)
 
-    print(data)
-    # temp_celsius = temperature - 273.15  # Convert Kelvin to Celsius
+    # print(data)
+    temp_celsius = temperature - 273.15  # Convert Kelvin to Celsius
     
-    # print(f"Current Temperature in Lagos: {temp_celsius:.2f}°C")
-    # print(f"Weather Condition: {weather_desc}")
+    print(f"Current Temperature in Lagos: {temp_celsius:.2f}°C")
+    print(f"Weather Condition: {weather_desc}")
+    print('name:', name)
 else:
     print("Error fetching weather data:", response.status_code)
