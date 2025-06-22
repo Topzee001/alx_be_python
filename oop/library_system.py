@@ -6,6 +6,9 @@ class Book:
     def __str__(self):
         return f"Book: {self.title} by {self.author}"
 
+    def __repr__(self):
+        return f"Book('{self.title}', '{self.author}')"
+
 
 class EBook(Book):
     def __init__(self, title, author, file_size):
@@ -35,6 +38,3 @@ class Library:
     def list_books(self):
         for book in self.books:
             print(book) 
-
-
-            
