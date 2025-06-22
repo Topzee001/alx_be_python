@@ -1,37 +1,35 @@
+# library_system.py
+
 class Book:
-    def init(self, title, author):
+    def __init__(self, title, author):
         self.title = title
         self.author = author
 
-    def str(self):
-        return f"Book: {self.title} by {self.author}"
-
 
 class EBook(Book):
-    def init(self, title, author, file_size):
-        super().init(title, author)
-        self.file_size = file_size  # in KB
-
-    def str(self):
-        return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
+    def __init__(self, title, author, file_size):
+        super().__init__(title, author)  # Call base class constructor
+        self.file_size = file_size       # Unique attribute for EBook
 
 
 class PrintBook(Book):
-    def init(self, title, author, page_count):
-        super().init(title, author)
-        self.page_count = page_count
-
-    def str(self):
-        return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
+    def __init__(self, title, author, page_count):
+        super().__init__(title, author)  # Call base class constructor
+        self.page_count = page_count     # Unique attribute for PrintBook
 
 
 class Library:
-    def init(self):
-        self.books = []
+    def __init__(self):
+        self.books = []  # List to hold Book, EBook, and PrintBook instances
 
     def add_book(self, book):
-        self.books.append(book)
+        self.books.append(book)  # Add any book type to the library
 
     def list_books(self):
         for book in self.books:
-            print(book) 
+            if isinstance(book, EBook):
+                print(f"EBook: {book.title} by {book.author}, File Size: {book.file_size}KB")
+            elif isinstance(book, PrintBook):
+                print(f"PrintBook: {book.title} by {book.author}, Page Count: {book.page_count}")
+            else:
+                print(f"Book: {book.title} by {book.author}")
