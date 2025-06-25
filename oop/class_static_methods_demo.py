@@ -9,3 +9,7 @@ class Calculator:
     def multiply(cls, a, b):
         print(f"Calculation type: {cls.calculation_type}")
         return a * b
+# calc = Calculator()
+# addition = calc.add(2,4)
+# print(addition)
+
