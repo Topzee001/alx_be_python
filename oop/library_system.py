@@ -6,8 +6,8 @@ class Book:
     def __str__(self):
         return f"Book: {self.title} by {self.author}"
 
-    def __repr__(self):
-        return f"Book('{self.title}', '{self.author}')"
+    # def __repr__(self):
+    #     return f"Book('{self.title}', '{self.author}')"
 
 
 class EBook(Book):
